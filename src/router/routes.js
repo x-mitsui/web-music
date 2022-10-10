@@ -1,12 +1,12 @@
 import Discover from '../pages/discover'
 import Mine from '../pages/mine'
 import Friends from '../pages/friends'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 
 const routes = [
   {
     path: '/discover',
-    component: Discover,
-    exact: true
+    component: Discover
   },
   {
     path: '/mine',
@@ -18,8 +18,9 @@ const routes = [
   },
   {
     path: '/',
-    exact: true,
-    component: Discover
+    render() {
+      return <Redirect to="/discover" />
+    }
   }
   // {
   //   path: '/B',
